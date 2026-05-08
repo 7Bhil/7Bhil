@@ -10,6 +10,9 @@
     <a href="https://www.linkedin.com/in/7bhil/">
       <img src="https://img.shields.io/badge/LinkedIn-Professional_Profile-0077B5?style=flat-square&logo=linkedin" />
     </a>
+    <a href="https://www.facebook.com/7Bhil">
+      <img src="https://img.shields.io/badge/Facebook-7Bhil-1877F2?style=flat-square&logo=facebook" />
+    </a>
   </p>
 
   <hr width="50%" />
