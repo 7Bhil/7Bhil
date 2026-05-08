@@ -1,38 +1,67 @@
-# 7Bhil
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=000000&height=150&section=header&text=7Bhil&fontSize=70&fontAlignY=50&fontColor=ffffff" />
 
-Développeur Fullstack passionné par la cybersécurité et l'intelligence artificielle.
+  <h1>Fullstack Developer | Cybersecurity & Artificial Intelligence</h1>
 
-Je consacre une grande partie de mon temps à l'exploration des nouvelles avancées technologiques et à la conception d'outils personnalisés. Mon approche est centrée sur la compréhension profonde des systèmes et la création de solutions robustes, que ce soit pour le web, le mobile ou l'automatisation.
+  <p align="center">
+    <a href="https://github.com/7Bhil">
+      <img src="https://img.shields.io/github/followers/7Bhil?label=Followers&style=flat-square&color=black" />
+    </a>
+    <a href="https://www.linkedin.com/in/7bhil/">
+      <img src="https://img.shields.io/badge/LinkedIn-Professional_Profile-0077B5?style=flat-square&logo=linkedin" />
+    </a>
+  </p>
 
-### Expertises Techniques
+  <hr width="50%" />
 
-**Frontend & Mobile**
-JavaScript, React.js, React Native, Next.js, Vue.js, HTML5, CSS3
+  <p align="center">
+    <i>Architecting secure, scalable, and intelligent digital solutions.</i>
+  </p>
+</div>
 
-**Backend & Frameworks**
-Node.js, Express, NestJS, PHP (Laravel), Python (Django)
+## Technical Proficiency
 
-**Domaines de Recherche**
-Cybersécurité, Intelligence Artificielle, Développement d'outils système
+### Frontend & Mobile Development
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=flat-square&logo=vuedotjs&logoColor=4FC08D)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)
 
-### Contact & Plateformes
+### Backend & Infrastructure
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-**LinkedIn** : [linkedin.com/in/7bhil](https://www.linkedin.com/in/7bhil/)  
-**GitHub** : [github.com/7Bhil](https://github.com/7Bhil)  
-**GitLab** : [gitlab.com/7Bhil](https://gitlab.com/7Bhil)
+### Cybersecurity & Systems
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat-square&logo=kali-linux&logoColor=white)
+![Encryption](https://img.shields.io/badge/Cryptography-Professional-black?style=flat-square)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
 
-### Statistiques et Activité
+---
 
-<p align=center>
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=7Bhil&theme=github" alt="Détails du profil" />
-</p>
+## Analytics & Performance
 
-<p align=center>
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=7Bhil&theme=github" alt="Statistiques" />
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=7Bhil&theme=github" alt="Dépôts par langage" />
-</p>
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=transparent&title_color=000000&icon_color=000000&text_color=333333&count_private=true" alt="7Bhil Stats" height="180px" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7Bhil&layout=compact&theme=transparent&title_color=000000&text_color=333333&hide=html,css" alt="Top Languages" height="180px" />
+</div>
 
-<p align=center>
-  <img src="http://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=7Bhil&theme=github" alt="Langages les plus commités" />
-  <img src="https://streak-stats.demolab.com?user=7Bhil&theme=github" alt="GitHub Streak" />
-</p>
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=7Bhil&theme=transparent&currStreakNum=000000&sideLabels=333333&stroke=000000" alt="GitHub Streak" />
+</div>
+
+---
+
+## Contact Information
+
+- **Professional Network**: [LinkedIn Profile](https://www.linkedin.com/in/7bhil/)
+- **Direct Inquiry**: `bhil.dev@gmail.com`
+- **Technical Repository**: [GitHub](https://github.com/7Bhil)
+
+<br />
+
+<div align="right">
+  <img src="https://komarev.com/ghpvc/?username=7Bhil&color=black&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
+</div>
