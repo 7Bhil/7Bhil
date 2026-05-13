@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=30&pause=1000&color=36BCF7&center=true&vCenter=true&width=800&height=100&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=40&pause=1000&color=36BCF7&center=true&vCenter=true&width=800&height=120&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="7Bhil - Architecte de solutions intelligentes" /></a>
 
 ---
 
@@ -46,8 +46,8 @@ Implémentation de modèles de langage (LLM) et automatisation intelligente des 
 ### Statistiques & Activité
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117" width="400" />
-  <img src="https://github-readme-streak-stats.herokuapp.app/?user=7Bhil&theme=radical&hide_border=true&background=0D1117" width="400" />
+  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical&hide_border=true" width="400" />
+  <img src="https://github-readme-streak-stats.herokuapp.app/?user=7Bhil&theme=radical&hide_border=true" width="400" />
 </div>
 
 ---
