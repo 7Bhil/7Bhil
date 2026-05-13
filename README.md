@@ -1,43 +1,58 @@
+<div align="center">
+
 # 7Bhil
-<p align="left">
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=FFFFFF&width=435&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
-</p>
-
-### Expertise
-Architecte spécialisé dans la conception de systèmes sécurisés et l'intégration de l'intelligence artificielle. Mon approche combine le développement fullstack moderne et une expertise en sécurité offensive pour bâtir des solutions robustes et résilientes.
-
-- **Sécurité Offensive** : Analyse de vulnérabilités, tests d'intrusion et sécurisation proactive des architectures.
-- **Ingénierie IA** : Implémentation de modèles de langage (LLM) et automatisation intelligente des processus.
-- **Développement Système & Réseau** : Conception d'infrastructures évolutives et performantes.
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=435&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
 
 ---
 
-### Projets Phares
-*Sélection de travaux majeurs en cours de développement.*
+### Expertise
+Architecte spécialisé dans la conception de systèmes sécurisés et l'intégration de l'IA.
+Fusion entre développement fullstack et sécurité offensive.
 
-* **LLM Local Infrastructure** : Optimisation et déploiement de modèles type Llama pour des environnements restreints.
-* **Network Security Toolkit** : Suite d'outils personnalisés pour l'audit et l'analyse de réseaux.
-* **Intelligent Fullstack Architectures** : Frameworks de développement intégrant nativement des couches de sécurité et d'IA.
+</div>
+
+### Sécurité Offensive
+Analyse de vulnérabilités, tests d'intrusion et sécurisation proactive des architectures complexes.
+
+### Ingénierie IA
+Implémentation de modèles de langage (LLM) et automatisation intelligente des flux de données.
 
 ---
 
 ### Stack Technique
-*Maîtrise technologique sans compromis.*
 
 **Languages & Logic**
-`C` `Java` `JavaScript` `PHP` `Python` `Node.js` `C++` `SQL`
+![C](https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 
 **Frameworks & Tools**
-`React Native` `Vue.js` `Laravel` `Django` `NestJS` `Docker` `Linux (Kali/Devian)` `Git`
+![React Native](https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white)
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
 ---
 
 ### Statistiques & Activité
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=dark&hide_border=true&title_color=ffffff&text_color=bbbbbb&icon_color=ffffff&bg_color=000000" alt="7Bhil's GitHub stats" />
-</p>
 
----
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical&hide_border=true" width="48%" />
+  <img src="https://github-readme-streak-stats.herokuapp.app/?user=7Bhil&theme=radical&hide_border=true" width="48%" />
+</div>
+
+<br />
+
+<div align="center">
 
 ### Contact
-[LinkedIn](https://www.linkedin.com/in/7Bhil) | [GitHub](https://github.com/7Bhil) | [GitLab](https://gitlab.com/7Bhil) | [Portfolio](https://7bhil.github.io/Bhilal/) | [Email](mailto:7bhilal.chitou7@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/7Bhil) • [GitHub](https://github.com/7Bhil) • [GitLab](https://gitlab.com/7Bhil) • [Portfolio](https://7bhil.github.io/Bhilal/) • [Email](mailto:7bhilal.chitou7@gmail.com)
+
+</div>
