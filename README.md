@@ -1,63 +1,43 @@
-# 👋 Hello, I'm 7Bhil
+# 7Bhil
+<p align="left">
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=FFFFFF&width=435&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
+</p>
 
-### Fullstack Developer | Cybersecurity & Artificial Intelligence Enthusiast
+### Expertise
+Architecte spécialisé dans la conception de systèmes sécurisés et l'intégration de l'intelligence artificielle. Mon approche combine le développement fullstack moderne et une expertise en sécurité offensive pour bâtir des solutions robustes et résilientes.
+
+- **Sécurité Offensive** : Analyse de vulnérabilités, tests d'intrusion et sécurisation proactive des architectures.
+- **Ingénierie IA** : Implémentation de modèles de langage (LLM) et automatisation intelligente des processus.
+- **Développement Système & Réseau** : Conception d'infrastructures évolutives et performantes.
 
 ---
 
-### 🚀 About Me
-I am a passionate developer focused on building secure, scalable, and intelligent digital solutions. My expertise lies at the intersection of fullstack development and cybersecurity, leveraging modern technologies to solve complex problems.
+### Projets Phares
+*Sélection de travaux majeurs en cours de développement.*
 
-- 🛡️ **Cybersecurity**: Penetration testing, secure coding, and system hardening.
-- 💻 **Fullstack**: Architecting robust applications from frontend to backend.
-- 🤖 **AI**: Integrating intelligence into modern workflows.
-
----
-
-### 🛠️ Tech Stack
-
-#### Frontend & Mobile
-<p>
-  <img src="https://img.shields.io/badge/React-000000?style=for-the-badge&logo=react&logoColor=white" alt="React" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/Vue.js-000000?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js" />
-  <img src="https://img.shields.io/badge/TypeScript-000000?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
-  <img src="https://img.shields.io/badge/Tailwind_CSS-000000?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind" />
-</p>
-
-#### Backend & Infrastructure
-<p>
-  <img src="https://img.shields.io/badge/Node.js-000000?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
-  <img src="https://img.shields.io/badge/NestJS-000000?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
-  <img src="https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
-  <img src="https://img.shields.io/badge/Docker-000000?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-</p>
-
-#### Security & Tools
-<p>
-  <img src="https://img.shields.io/badge/Kali_Linux-000000?style=for-the-badge&logo=kali-linux&logoColor=white" alt="Kali Linux" />
-  <img src="https://img.shields.io/badge/Git-000000?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-  <img src="https://img.shields.io/badge/Linux-000000?style=for-the-badge&logo=linux&logoColor=white" alt="Linux" />
-</p>
+* **LLM Local Infrastructure** : Optimisation et déploiement de modèles type Llama pour des environnements restreints.
+* **Network Security Toolkit** : Suite d'outils personnalisés pour l'audit et l'analyse de réseaux.
+* **Intelligent Fullstack Architectures** : Frameworks de développement intégrant nativement des couches de sécurité et d'IA.
 
 ---
 
-### 📊 Github Stats
+### Stack Technique
+*Maîtrise technologique sans compromis.*
 
-<div align="center">
+**Languages & Logic**
+`C` `Java` `JavaScript` `PHP` `Python` `Node.js` `C++` `SQL`
+
+**Frameworks & Tools**
+`React Native` `Vue.js` `Laravel` `Django` `NestJS` `Docker` `Linux (Kali/Devian)` `Git`
+
+---
+
+### Statistiques & Activité
+<p align="left">
   <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=dark&hide_border=true&title_color=ffffff&text_color=bbbbbb&icon_color=ffffff&bg_color=000000" alt="7Bhil's GitHub stats" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7Bhil&layout=compact&theme=dark&hide_border=true&title_color=ffffff&text_color=bbbbbb&bg_color=000000&hide=html,css" alt="Top Languages" />
-</div>
+</p>
 
 ---
 
-### 📫 Let's Connect
-- **LinkedIn**: [7Bhil](https://www.linkedin.com/in/7bhil/)
-- **Email**: [bhil.dev@gmail.com](mailto:bhil.dev@gmail.com)
-- **Portfolio**: [7bhil.com](https://7bhil.com) (Prochainement)
-
-<br />
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=7Bhil&color=black&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
-</div>
+### Contact
+[LinkedIn](https://www.linkedin.com/in/7Bhil) | [GitHub](https://github.com/7Bhil) | [GitLab](https://gitlab.com/7Bhil) | [Portfolio](https://7bhil.github.io/Bhilal/) | [Email](mailto:7bhilal.chitou7@gmail.com)
