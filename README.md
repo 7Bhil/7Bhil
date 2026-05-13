@@ -1,7 +1,6 @@
 <div align="center">
 
-# 7Bhil
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&pause=1000&color=36BCF7&center=true&vCenter=true&width=435&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&height=100&lines=7Bhil;Architecte+de+solutions+intelligentes;Offensive+Security+Enthusiast" alt="Typing SVG" /></a>
 
 ---
 
@@ -44,8 +43,8 @@ Implémentation de modèles de langage (LLM) et automatisation intelligente des 
 ### Statistiques & Activité
 
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical&hide_border=true" width="48%" />
-  <img src="https://github-readme-streak-stats.herokuapp.app/?user=7Bhil&theme=radical&hide_border=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical&hide_border=true" height="170" />
+  <img src="https://github-readme-streak-stats.herokuapp.app/?user=7Bhil&theme=radical&hide_border=true" height="170" />
 </div>
 
 <br />
@@ -53,6 +52,9 @@ Implémentation de modèles de langage (LLM) et automatisation intelligente des 
 <div align="center">
 
 ### Contact
-[LinkedIn](https://www.linkedin.com/in/7Bhil) • [GitHub](https://github.com/7Bhil) • [GitLab](https://gitlab.com/7Bhil) • [Portfolio](https://7bhil.github.io/Bhilal/) • [Email](mailto:7bhilal.chitou7@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/7Bhil)
+[![GitLab](https://img.shields.io/badge/GitLab-FC6D26?style=for-the-badge&logo=gitlab&logoColor=white)](https://gitlab.com/7Bhil)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://7bhil.github.io/Bhilal/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:7bhilal.chitou7@gmail.com)
 
 </div>
