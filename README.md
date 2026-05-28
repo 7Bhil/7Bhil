@@ -51,8 +51,8 @@ Implémentation de modèles de langage (LLM) et automatisation intelligente des 
   <br />
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=7Bhil&theme=radical&hide_border=true" width="820" alt="GitHub Activity Graph" />
   <br />
-  <img src="https://gitlab-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical" width="400" alt="GitLab Stats" />
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7Bhil&layout=compact&theme=radical&hide_border=true" width="400" alt="Top Languages" />
+  <img src="https://gitlab-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=radical" width="400" alt="GitLab Stats" />
 </div>
 
 ---
