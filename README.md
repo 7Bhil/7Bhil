@@ -9,14 +9,6 @@
 
 ## 👨‍💻 About Me
 
-```text
-🌍  Based in      Porto-Novo, Bénin
-💼  Focus         Full-Stack Dev · Fintech · Offensive Security · AI Engineering
-🧠  Crafted       Bhilal Language — a modern language compiling to JS & Go
-🛡️  Specialty     Proactive security testing · LLM implementation · Intelligent systems
-🚀  Projects      Bhil Cours · Bhil Cars · Platform for Mouvement Patriotique du Bénin
-```
-
 Je construis des systèmes qui **résolvent de vrais problèmes** — des plateformes d'apprentissage aux outils de sécurité offensive, en passant par des solutions Fintech adaptées à l'Afrique.
 J'ai même créé mon propre langage de programmation : **Bhilal Language**, avec une syntaxe inspirée de C et JavaScript, le support de la POO et des outils de cybersécurité intégrés.
 
@@ -52,15 +44,6 @@ J'ai même créé mon propre langage de programmation : **Bhilal Language**, ave
 ![VS Code](https://img.shields.io/badge/VS_Code-007ACC?style=flat&logo=visual-studio-code&logoColor=white)
 
 ---
-
-## 🔥 Projets Phares
-
-| Projet | Description |
-|--------|-------------|
-| 🔤 **Bhilal Language** | Langage de programmation moderne (syntaxe C/JS), POO, compilation vers JS & Go, outils cybersécurité intégrés |
-| 📚 **Bhil Cours** | Plateforme d'apprentissage en ligne |
-| 🚗 **Bhil Cars** | Plateforme de vente de véhicules |
-| 🇧🇯 **Plateforme MPB** | Solution de gestion pour le Mouvement Patriotique du Bénin |
 
 ---
 
