@@ -3,13 +3,7 @@
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?size=25&duration=7000&vCenter=true&width=650&height=40&lines=WELCOME!;My+name+is+Bhilal+CHITOU...;I+am+a+Developer...;I+hope+you+find+what+you+are+looking+for...;You+have+my+contact+information...;MAY+THE+FORCE+BE+WITH+YOU...)](https://git.io/typing-svg)
 
 <p align="center">
-
-<picture>
-<source media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/banner-dark.png?cache=unique-parameter">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/banner-light.png?cache=unique-parameter">
-<img width=85% alt="Bhilal CHITOU's Banner" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/banner-dark.png?cache=unique-parameter">
-</picture>
-  
+  <img src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/monlogo.png" alt="Bhilal CHITOU Logo" width="250" />
 </p>
   
 <br />
@@ -32,27 +26,6 @@
 </a>
 </p>
 
-
-
-
-<p align="center">
-
-<!-- Language Stats Dark/Light Mode -->
-<picture>
-<source media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-dark.svg?cache=unique-parameter">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-light.svg?cache=unique-parameter">
-<img height=200 alt="Bhilal CHITOU's Language Stats" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-dark.svg?cache=unique-parameter">
-</picture>
-  
-<!-- Github Stats Dark/Light Mode -->
-<picture>
-<source media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-dark.svg?cache=unique-parameter">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-light.svg?cache=unique-parameter">
-<img height=200 alt="Bhilal CHITOU's Github Stats" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-dark.svg?cache=unique-parameter">
-</picture>
-  
-</p>
-  
 ---
 
 ### Profile Visits :
@@ -68,16 +41,4 @@
   </a>
 </p>
 
----
-
-<!-- Profile 3D Dark/Light Mode -->
-<p align="center">
-<a href="https://raw.githubusercontent.com/7Bhil/7Bhil/main/profile-3d-contrib/profile-night-green.svg?cache=unique-parameter">
-<picture>
-<source media="(prefers-color-scheme: dark), (prefers-color-scheme: no-preference)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/profile-3d-contrib/profile-night-green.svg?cache=unique-parameter">
-<source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/profile-3d-contrib/profile-green.svg?cache=unique-parameter">
-<img alt="Profile 3D Contrib" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/profile-3d-contrib/profile-night-green.svg?cache=unique-parameter" onload="this.style.opacity=1;">
-</picture>
-</a>
-</p>
 
