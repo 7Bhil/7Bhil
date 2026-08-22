@@ -61,8 +61,16 @@ J'ai même créé mon propre langage de programmation : **Bhilal Language**, ave
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=7Bhil&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&rank_icon=github" alt="GitHub Stats" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=7Bhil&layout=compact&theme=tokyonight&hide_border=true&hide=css,html" alt="Top Languages" height="165" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/gh-stats-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/gh-stats-light.svg">
+    <img alt="Bhilal CHITOU's GitHub Stats" src="assets/gh-stats-dark.svg" height="190" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/top-langs-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/top-langs-light.svg">
+    <img alt="Most Used Languages" src="assets/top-langs-dark.svg" height="190" />
+  </picture>
 </p>
 
 ---

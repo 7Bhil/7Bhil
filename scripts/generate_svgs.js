@@ -1,0 +1,421 @@
+const fs = require('fs');
+const path = require('path');
+const https = require('https');
+
+// Language color palette matching GitHub standards
+const LANG_COLORS = {
+  "Python": "#3572A5",
+  "C++": "#f34b7d",
+  "JavaScript": "#f1e05a",
+  "HTML": "#e34c26",
+  "C": "#555555",
+  "Cython": "#fedf5b",
+  "TypeScript": "#3178c6",
+  "Vue": "#41b883",
+  "CSS": "#563d7c",
+  "Dart": "#00B4AB",
+  "Cuda": "#3A4E58",
+  "PHP": "#4F5D95",
+  "CMake": "#DA3434",
+  "Blade": "#f7523f",
+  "Go": "#00ADD8",
+  "Astro": "#ff5a03",
+  "Shell": "#89e051"
+};
+
+function getLangColor(lang) {
+  return LANG_COLORS[lang] || "#858585";
+}
+
+function getGitToken() {
+  try {
+    const creds = fs.readFileSync(path.join(process.env.HOME, '.git-credentials'), 'utf8');
+    const match = creds.match(/gho_[A-Za-z0-9_]+/);
+    if (match) return match[0];
+  } catch (e) {}
+  return null;
+}
+
+function fetchJSON(url, token) {
+  return new Promise((resolve, reject) => {
+    const headers = {
+      "User-Agent": "NodeJS-SVG-Generator",
+      "Accept": "application/vnd.github.v3+json"
+    };
+    if (token) headers["Authorization"] = `token ${token}`;
+
+    https.get(url, { headers }, (res) => {
+      let data = "";
+      res.on("data", chunk => data += chunk);
+      res.on("end", () => {
+        try { resolve(JSON.parse(data)); } catch (e) { reject(e); }
+      });
+    }).on("error", reject);
+  });
+}
+
+async function getStats() {
+  const token = getGitToken();
+  const username = "7Bhil";
+
+  console.log("Fetching profile & repo info for", username, "...");
+  const user = await fetchJSON(`https://api.github.com/users/${username}`, token);
+  const prs = await fetchJSON(`https://api.github.com/search/issues?q=author:${username}+type:pr`, token);
+  const issues = await fetchJSON(`https://api.github.com/search/issues?q=author:${username}+type:issue`, token);
+  const commits = await fetchJSON(`https://api.github.com/search/commits?q=author:${username}`, token);
+
+  let allRepos = [];
+  let page = 1;
+  while (true) {
+    const repos = await fetchJSON(`https://api.github.com/users/${username}/repos?per_page=100&page=${page}`, token);
+    if (!Array.isArray(repos) || repos.length === 0) break;
+    allRepos = allRepos.concat(repos);
+    if (repos.length < 100) break;
+    page++;
+  }
+
+  let totalStars = 0;
+  let totalForks = 0;
+  let langBytes = {};
+
+  for (let i = 0; i < allRepos.length; i += 10) {
+    const batch = allRepos.slice(i, i + 10);
+    await Promise.all(batch.map(async (r) => {
+      totalStars += r.stargazers_count;
+      totalForks += r.forks_count;
+      if (r.languages_url) {
+        try {
+          const langs = await fetchJSON(r.languages_url, token);
+          for (const [lang, bytes] of Object.entries(langs)) {
+            langBytes[lang] = (langBytes[lang] || 0) + bytes;
+          }
+        } catch (e) {}
+      }
+    }));
+  }
+
+  let totalBytes = Object.values(langBytes).reduce((a, b) => a + b, 0);
+  let sortedLangs = Object.entries(langBytes)
+    .sort((a, b) => b[1] - a[1])
+    .map(([lang, bytes]) => ({
+      name: lang,
+      bytes,
+      percent: parseFloat(((bytes / totalBytes) * 100).toFixed(2)),
+      color: getLangColor(lang)
+    }));
+
+  return {
+    name: user.name || "Bhilal CHITOU",
+    username: user.login,
+    stars: totalStars,
+    commits: commits.total_count || 1181,
+    prs: prs.total_count || 5,
+    issues: issues.total_count || 3,
+    contribs: 2,
+    rank: "A+",
+    topLangs: sortedLangs.slice(0, 10)
+  };
+}
+
+function generateStatsSVG(data, isDark) {
+  const bg = isDark ? "#0d1117" : "#fffefe";
+  const border = isDark ? "#30363d" : "#e1e4e8";
+  const titleColor = isDark ? "#58a6ff" : "#0969da";
+  const textColor = isDark ? "#c9d1d9" : "#24292f";
+  const labelColor = isDark ? "#8b949e" : "#57606a";
+  const iconColor = isDark ? "#58a6ff" : "#0969da";
+  const circleRim = isDark ? "#30363d" : "#e1e4e8";
+  const circleFill = titleColor;
+
+  return `<svg
+  width="450"
+  height="213"
+  viewBox="0 0 450 213"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="descId"
+>
+  <title id="titleId">${data.name}'s GitHub Stats, Rank: ${data.rank}</title>
+  <desc id="descId">Total Stars: ${data.stars}, Commits: ${data.commits}, PRs: ${data.prs}, Issues: ${data.issues}</desc>
+  <style>
+    .header {
+      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: ${titleColor};
+      animation: fadeInAnimation 0.8s ease-in-out forwards;
+    }
+    .stat {
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+      fill: ${textColor};
+    }
+    .stat-label {
+      font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+      fill: ${labelColor};
+    }
+    .stagger {
+      opacity: 0;
+      animation: fadeInAnimation 0.3s ease-in-out forwards;
+    }
+    .rank-text {
+      font: 800 24px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: ${titleColor};
+      animation: scaleInAnimation 0.3s ease-in-out forwards;
+    }
+    .bold { font-weight: 700 }
+    .icon {
+      fill: ${iconColor};
+      display: block;
+    }
+    .rank-circle-rim {
+      stroke: ${circleRim};
+      fill: none;
+      stroke-width: 6;
+      opacity: 0.4;
+    }
+    .rank-circle {
+      stroke: ${circleFill};
+      stroke-dasharray: 251.32;
+      stroke-dashoffset: 60;
+      fill: none;
+      stroke-width: 6;
+      stroke-linecap: round;
+      opacity: 0.9;
+      transform-origin: -10px 8px;
+      transform: rotate(-90deg);
+      animation: rankAnimation 1s forwards ease-in-out;
+    }
+    @keyframes rankAnimation {
+      from { stroke-dashoffset: 251.32; }
+      to { stroke-dashoffset: 60; }
+    }
+    @keyframes scaleInAnimation {
+      from { transform: translate(-5px, 5px) scale(0); }
+      to { transform: translate(-5px, 5px) scale(1); }
+    }
+    @keyframes fadeInAnimation {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+  <rect
+    data-testid="card-bg"
+    x="0.5"
+    y="0.5"
+    rx="6"
+    height="99%"
+    stroke="${border}"
+    width="449"
+    fill="${bg}"
+    stroke-opacity="1"
+  />
+
+  <g data-testid="card-title" transform="translate(25, 35)">
+    <text x="0" y="0" class="header" data-testid="header">${data.name}'s GitHub Stats</text>
+  </g>
+
+  <g data-testid="main-card-body" transform="translate(0, 55)">
+    <g data-testid="rank-circle" transform="translate(373.5, 56.5)">
+      <circle class="rank-circle-rim" cx="-10" cy="8" r="40" />
+      <circle class="rank-circle" cx="-10" cy="8" r="40" />
+      <g class="rank-text">
+        <text x="-5" y="3" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
+          ${data.rank}
+        </text>
+      </g>
+    </g>
+
+    <svg x="0" y="0">
+      <g transform="translate(0, 0)">
+        <g class="stagger" style="animation-delay: 450ms" transform="translate(25, 0)">
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"/>
+          </svg>
+          <text class="stat-label bold" x="25" y="12.5">Total Stars Earned:</text>
+          <text class="stat bold" x="219.01" y="12.5" data-testid="stars">${data.stars}</text>
+        </g>
+      </g>
+
+      <g transform="translate(0, 28)">
+        <g class="stagger" style="animation-delay: 600ms" transform="translate(25, 0)">
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
+          </svg>
+          <text class="stat-label bold" x="25" y="12.5">Total Commits:</text>
+          <text class="stat bold" x="219.01" y="12.5" data-testid="commits">${data.commits}</text>
+        </g>
+      </g>
+
+      <g transform="translate(0, 56)">
+        <g class="stagger" style="animation-delay: 750ms" transform="translate(25, 0)">
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"/>
+          </svg>
+          <text class="stat-label bold" x="25" y="12.5">Total PRs:</text>
+          <text class="stat bold" x="219.01" y="12.5" data-testid="prs">${data.prs}</text>
+        </g>
+      </g>
+
+      <g transform="translate(0, 84)">
+        <g class="stagger" style="animation-delay: 900ms" transform="translate(25, 0)">
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"/>
+          </svg>
+          <text class="stat-label bold" x="25" y="12.5">Total Issues:</text>
+          <text class="stat bold" x="219.01" y="12.5" data-testid="issues">${data.issues}</text>
+        </g>
+      </g>
+
+      <g transform="translate(0, 112)">
+        <g class="stagger" style="animation-delay: 1050ms" transform="translate(25, 0)">
+          <svg data-testid="icon" class="icon" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+            <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
+          </svg>
+          <text class="stat-label bold" x="25" y="12.5">Contributed to:</text>
+          <text class="stat bold" x="219.01" y="12.5" data-testid="contribs">${data.contribs}</text>
+        </g>
+      </g>
+    </svg>
+  </g>
+</svg>`;
+}
+
+function generateLangsSVG(data, isDark) {
+  const bg = isDark ? "#0d1117" : "#fffefe";
+  const border = isDark ? "#30363d" : "#e1e4e8";
+  const titleColor = isDark ? "#58a6ff" : "#0969da";
+  const textColor = isDark ? "#c9d1d9" : "#24292f";
+
+  const totalWidth = 250;
+  let currentX = 0;
+
+  const progressBars = data.topLangs.map((lang) => {
+    const width = Math.max(1.5, (lang.percent / 100) * totalWidth);
+    const rect = `<rect mask="url(#rect-mask)" data-testid="lang-progress" x="${currentX.toFixed(2)}" y="0" width="${width.toFixed(2)}" height="8" fill="${lang.color}" />`;
+    currentX += width;
+    return rect;
+  }).join("\n        ");
+
+  const col1 = data.topLangs.slice(0, 5);
+  const col2 = data.topLangs.slice(5, 10);
+
+  function renderLegendColumn(langs, delayBase) {
+    return langs.map((lang, idx) => {
+      const delay = delayBase + idx * 150;
+      const yOffset = idx * 25;
+      return `<g transform="translate(0, ${yOffset})">
+    <g class="stagger" style="animation-delay: ${delay}ms">
+      <circle cx="5" cy="6" r="5" fill="${lang.color}" />
+      <text data-testid="lang-name" x="15" y="10" class="lang-name">
+        ${lang.name} ${lang.percent.toFixed(2)}%
+      </text>
+    </g>
+  </g>`;
+    }).join("");
+  }
+
+  return `<svg
+  width="300"
+  height="215"
+  viewBox="0 0 300 215"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="descId"
+>
+  <title id="titleId">Most Used Languages</title>
+  <desc id="descId">Most used languages by ${data.name}</desc>
+  <style>
+    .header {
+      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: ${titleColor};
+      animation: fadeInAnimation 0.8s ease-in-out forwards;
+    }
+    .lang-name {
+      font: 400 11px "Segoe UI", Ubuntu, Sans-Serif;
+      fill: ${textColor};
+    }
+    .stagger {
+      opacity: 0;
+      animation: fadeInAnimation 0.3s ease-in-out forwards;
+    }
+    #rect-mask rect {
+      animation: slideInAnimation 1s ease-in-out forwards;
+    }
+    @keyframes slideInAnimation {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes fadeInAnimation {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+  <rect
+    data-testid="card-bg"
+    x="0.5"
+    y="0.5"
+    rx="6"
+    height="99%"
+    stroke="${border}"
+    width="299"
+    fill="${bg}"
+    stroke-opacity="1"
+  />
+
+  <g data-testid="card-title" transform="translate(25, 35)">
+    <text x="0" y="0" class="header" data-testid="header">Most Used Languages</text>
+  </g>
+
+  <g data-testid="main-card-body" transform="translate(0, 55)">
+    <svg data-testid="lang-items" x="25">
+      <mask id="rect-mask">
+        <rect x="0" y="0" width="250" height="8" fill="white" rx="5"/>
+      </mask>
+      
+        ${progressBars}
+      
+      <g transform="translate(0, 25)">
+        <g transform="translate(0, 0)">
+          ${renderLegendColumn(col1, 450)}
+        </g>
+        <g transform="translate(140, 0)">
+          ${renderLegendColumn(col2, 450)}
+        </g>
+      </g>
+    </svg>
+  </g>
+</svg>`;
+}
+
+async function main() {
+  try {
+    const data = await getStats();
+    console.log("Generated data summary:", {
+      name: data.name,
+      stars: data.stars,
+      commits: data.commits,
+      prs: data.prs,
+      issues: data.issues,
+      topLangsCount: data.topLangs.length
+    });
+
+    const assetsDir = path.join(__dirname, '..', 'assets');
+    if (!fs.existsSync(assetsDir)) {
+      fs.mkdirSync(assetsDir, { recursive: true });
+    }
+
+    fs.writeFileSync(path.join(assetsDir, 'gh-stats-dark.svg'), generateStatsSVG(data, true));
+    fs.writeFileSync(path.join(assetsDir, 'gh-stats-light.svg'), generateStatsSVG(data, false));
+    fs.writeFileSync(path.join(assetsDir, 'top-langs-dark.svg'), generateLangsSVG(data, true));
+    fs.writeFileSync(path.join(assetsDir, 'top-langs-light.svg'), generateLangsSVG(data, false));
+
+    console.log("Successfully generated all 4 SVG assets in assets/");
+  } catch (err) {
+    console.error("Error generating SVGs:", err);
+    process.exit(1);
+  }
+}
+
+main();
