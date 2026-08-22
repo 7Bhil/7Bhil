@@ -73,15 +73,7 @@
   <img src="https://img.shields.io/badge/VS_Code-007ACC?style=flat-square&logo=visual-studio-code&logoColor=white" alt="VS Code" />
 </p>
 
----
 
-<h2 align="center">GitHub Achievements & Trophies</h2>
-
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=7Bhil&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" alt="GitHub Trophies" />
-</p>
-
----
 
 <h2 align="center">Statistics</h2>
 
