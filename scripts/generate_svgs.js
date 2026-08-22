@@ -2,22 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
+// List of repos to ignore for top languages calculations (e.g. huge datasets/clones)
+const IGNORED_REPOS = ["nemesis", "sentinelle", "cours-back", "mirage-server"];
+
 // Language color palette matching GitHub standards
 const LANG_COLORS = {
-  "Python": "#3572A5",
-  "C++": "#f34b7d",
   "JavaScript": "#f1e05a",
   "HTML": "#e34c26",
-  "C": "#555555",
-  "Cython": "#fedf5b",
   "TypeScript": "#3178c6",
   "Vue": "#41b883",
+  "Python": "#3572A5",
   "CSS": "#563d7c",
-  "Dart": "#00B4AB",
-  "Cuda": "#3A4E58",
   "PHP": "#4F5D95",
-  "CMake": "#DA3434",
+  "Dart": "#00B4AB",
   "Blade": "#f7523f",
+  "C++": "#f34b7d",
+  "C": "#555555",
+  "Cython": "#fedf5b",
+  "Cuda": "#3A4E58",
+  "CMake": "#DA3434",
   "Go": "#00ADD8",
   "Astro": "#ff5a03",
   "Shell": "#89e051"
@@ -28,6 +31,7 @@ function getLangColor(lang) {
 }
 
 function getGitToken() {
+  if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN;
   try {
     const creds = fs.readFileSync(path.join(process.env.HOME, '.git-credentials'), 'utf8');
     const match = creds.match(/gho_[A-Za-z0-9_]+/);
@@ -83,6 +87,10 @@ async function getStats() {
     await Promise.all(batch.map(async (r) => {
       totalStars += r.stargazers_count;
       totalForks += r.forks_count;
+      
+      // Filter out heavy repos for language distribution
+      if (IGNORED_REPOS.includes(r.name.toLowerCase())) return;
+
       if (r.languages_url) {
         try {
           const langs = await fetchJSON(r.languages_url, token);
@@ -398,7 +406,8 @@ async function main() {
       commits: data.commits,
       prs: data.prs,
       issues: data.issues,
-      topLangsCount: data.topLangs.length
+      topLangsCount: data.topLangs.length,
+      ignoredRepos: IGNORED_REPOS
     });
 
     const assetsDir = path.join(__dirname, '..', 'assets');
