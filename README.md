@@ -1,7 +1,5 @@
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=4000&pause=1000&color=00BFFF&center=true&vCenter=true&width=700&height=50&lines=Hey+there!+I'm+Bhilal+CHITOU;Full-Stack+%26+Mobile+Developer;Fintech+%26+Offensive+Security+Specialist;Builder+of+the+Bhilal+Language;Based+in+Porto-Novo%2C+Benin" alt="Typing SVG" />
-  </a>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=4000&pause=1000&color=00BFFF&center=true&vCenter=true&width=700&height=50&lines=Hey+there!+I'm+Bhilal+CHITOU;Full-Stack+%26+Mobile+Developer;Fintech+%26+Offensive+Security+Specialist;Builder+of+the+Bhilal+Language;Based+in+Porto-Novo%2C+Benin" alt="Typing SVG" />
 </p>
 
 <p align="center">
@@ -82,9 +80,7 @@
 </p>
 
 <p align="center">
-  <a href="https://git.io/streak-stats">
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=7Bhil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
-  </a>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=7Bhil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 
 <p align="center">
