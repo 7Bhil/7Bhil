@@ -3,7 +3,7 @@ const path = require('path');
 const https = require('https');
 
 // List of repos to ignore for top languages calculations (e.g. huge datasets/clones)
-const IGNORED_REPOS = ["nemesis", "sentinelle", "cours-back", "mirage-server"];
+const IGNORED_REPOS = [];
 
 // Language color palette matching GitHub standards
 const LANG_COLORS = {
