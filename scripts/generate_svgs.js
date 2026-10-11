@@ -681,13 +681,12 @@ async function main() {
       fs.mkdirSync(assetsDir, { recursive: true });
     }
 
-    fs.writeFileSync(path.join(assetsDir, 'github-stats.svg'), generateDashboardSVG(data));
     fs.writeFileSync(path.join(assetsDir, 'gh-stats-dark.svg'), generateStatsSVG(data, true));
     fs.writeFileSync(path.join(assetsDir, 'gh-stats-light.svg'), generateStatsSVG(data, false));
     fs.writeFileSync(path.join(assetsDir, 'top-langs-dark.svg'), generateLangsSVG(data, true));
     fs.writeFileSync(path.join(assetsDir, 'top-langs-light.svg'), generateLangsSVG(data, false));
 
-    console.log("Successfully generated all SVG assets including github-stats.svg in assets/");
+    console.log("Successfully generated SVG assets in assets/");
   } catch (err) {
     console.error("Error generating SVGs:", err);
     process.exit(1);
