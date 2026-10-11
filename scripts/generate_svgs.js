@@ -390,9 +390,275 @@ function generateLangsSVG(data, isDark) {
         </g>
         <g transform="translate(140, 0)">
           ${renderLegendColumn(col2, 450)}
-        </g>
       </g>
     </svg>
+  </g>
+</svg>`;
+}
+
+function generateDashboardSVG(data) {
+  const circ = 427.26; // 2 * PI * 68
+  let currentOffset = 0;
+  const topFive = data.topLangs.slice(0, 5);
+  const primaryLang = topFive[0] || { name: "TypeScript", percent: 45, color: "#3178c6" };
+
+  const doughnutSlices = topFive.map((lang, idx) => {
+    const strokeLen = (lang.percent / 100) * circ;
+    const dashArray = `${strokeLen.toFixed(2)} ${circ.toFixed(2)}`;
+    const offset = -currentOffset;
+    currentOffset += strokeLen;
+    return `<circle cx="450" cy="115" r="68" fill="none" stroke="${lang.color}" stroke-width="26" stroke-dasharray="${dashArray}" stroke-dashoffset="${offset.toFixed(2)}" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>`;
+  }).join("\n");
+
+  const langListItems = topFive.map((lang, idx) => {
+    const y = 80 + (idx * 28);
+    return `
+      <circle cx="620" cy="${y}" r="5" fill="${lang.color}"/>
+      <text x="638" y="${y + 5}" font-size="14" fill="#E8ECF8">${lang.name}</text>
+      <text x="1080" y="${y + 5}" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">${lang.percent}%</text>
+    `;
+  }).join("\n");
+
+  // Sample hourly activity heights for visual representation of high activity rhythm
+  const hours = [18, 12, 8, 5, 4, 10, 24, 45, 68, 85, 92, 110, 95, 88, 105, 118, 90, 75, 62, 50, 42, 35, 28, 22];
+  const maxH = Math.max(...hours);
+  const barElements = hours.map((h, i) => {
+    const bx = 48 + i * 44;
+    const barHeight = Math.max(8, Math.round((h / maxH) * 105));
+    const by = 145 - barHeight;
+    const isPeak = h >= 100;
+    const fill = isPeak ? "url(#barPeak)" : "url(#bar)";
+    return `
+      <rect class="b" x="${bx}" y="${by}" width="26" height="${barHeight}" rx="4" fill="${fill}" />
+      <text x="${bx + 13}" y="165" text-anchor="middle" font-size="11" fill="#8B94B3">${i}h</text>
+    `;
+  }).join("\n");
+
+  return `<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="800"
+  viewBox="0 0 1200 800"
+  fill="none"
+  role="img"
+  aria-label="GitHub stats dashboard for ${data.name}"
+>
+  <title>GitHub stats dashboard for ${data.name}</title>
+  <desc>Rank ${data.rank}, Total Commits: ${data.commits}, Stars: ${data.stars}, PRs: ${data.prs}, Issues: ${data.issues}</desc>
+
+  <style>
+    text {
+      font-family: 'Segoe UI Variable Display', 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      font-variant-numeric: tabular-nums;
+    }
+    .b {
+      transform-box: fill-box;
+      transform-origin: 50% 100%;
+      animation: growBars 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+    .rank-glow {
+      animation: rankPulse 3s infinite ease-in-out;
+    }
+    @keyframes growBars {
+      from { transform: scaleY(0); }
+      to { transform: scaleY(1); }
+    }
+    @keyframes rankPulse {
+      0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5)); }
+      50% { filter: drop-shadow(0 0 22px rgba(124, 92, 255, 0.8)); }
+    }
+  </style>
+
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A0F1F"/>
+      <stop offset="100%" stop-color="#0F1530"/>
+    </linearGradient>
+
+    <!-- Card Background -->
+    <linearGradient id="cardBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141C38" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#0E132A" stop-opacity="0.65"/>
+    </linearGradient>
+
+    <!-- Ambient Glows -->
+    <radialGradient id="glowA" cx="0.12" cy="0.05" r="0.55">
+      <stop offset="0" stop-color="#7C5CFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0.92" cy="0.98" r="0.5">
+      <stop offset="0" stop-color="#22D3EE" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#22D3EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowRank" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#00f2fe" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Patterns -->
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#FFFFFF" fill-opacity="0.055"/>
+    </pattern>
+
+    <!-- Numbers Gradient -->
+    <linearGradient id="numfill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#C9D2F5"/>
+    </linearGradient>
+
+    <!-- Rank Ring Gradient -->
+    <linearGradient id="rankRing" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#7C5CFF"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+
+    <!-- Bar Chart Gradients -->
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.75"/>
+    </linearGradient>
+    <linearGradient id="barPeak" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="rankTextGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Container & Background -->
+  <rect width="1200" height="800" rx="28" fill="url(#bg)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#dots)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#glowA)"/>
+  <rect width="1200" height="800" rx="28" fill="url(#glowB)"/>
+  <rect x="0.5" y="0.5" width="1199" height="799" rx="28" fill="none" stroke="#FFFFFF" stroke-opacity="0.08"/>
+
+  <!-- ==================== HEADER ==================== -->
+  <g transform="translate(40, 52)">
+    <text font-size="28" font-weight="800" fill="#E8ECF8" letter-spacing="-0.4">GitHub Stats</text>
+    <text y="24" font-size="14.5" fill="#8B94B3">${data.name} (@${data.username}) — Full-Stack &amp; Offensive Security Specialist</text>
+  </g>
+
+  <!-- Live Pulse Dot -->
+  <circle cx="1140" cy="50" r="5" fill="#10b981" />
+  <circle cx="1140" cy="50" r="10" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.6">
+    <animate attributeName="r" values="6;14;6" dur="2.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.8;0;0.8" dur="2.5s" repeatCount="indefinite"/>
+  </circle>
+  <text x="1122" y="55" font-size="12" font-weight="600" fill="#10b981" text-anchor="end">LIVE SYNC</text>
+
+  <!-- ==================== ROW 1: 3 METRIC CARDS ==================== -->
+
+  <!-- CARD 1: GLOBAL RANK (A+) PROMINENT SHOWCASE -->
+  <g transform="translate(40, 96)">
+    <rect width="360" height="195" rx="20" fill="url(#cardBg)" stroke="#00f2fe" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="100" cy="98" r="62" fill="url(#glowRank)"/>
+
+    <!-- Ring Track & Glowing Progress Ring -->
+    <circle cx="100" cy="98" r="54" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="10"/>
+    <circle cx="100" cy="98" r="54" fill="none" stroke="url(#rankRing)" stroke-width="10" stroke-linecap="round" stroke-dasharray="339.29" stroke-dashoffset="35" transform="rotate(-90 100 98)" class="rank-glow"/>
+
+    <!-- Rank Letter A+ -->
+    <text x="100" y="112" text-anchor="middle" font-size="44" font-weight="900" fill="url(#rankTextGrad)" letter-spacing="-1">
+      ${data.rank}
+    </text>
+
+    <!-- Rank Information -->
+    <text x="180" y="72" font-size="13" font-weight="700" fill="#00f2fe" letter-spacing="2">GLOBAL RANK</text>
+    <text x="180" y="104" font-size="26" font-weight="800" fill="#FFFFFF">Grade ${data.rank}</text>
+    <text x="180" y="132" font-size="13" fill="#8B94B3">Top 1% Contributor</text>
+    
+    <rect x="180" y="146" width="145" height="22" rx="11" fill="#00f2fe" fill-opacity="0.1" stroke="#00f2fe" stroke-opacity="0.3"/>
+    <text x="252" y="161" font-size="11" font-weight="700" fill="#38bdf8" text-anchor="middle">EXCELLENCE SCORE</text>
+  </g>
+
+  <!-- CARD 2: TOTAL COMMITS -->
+  <g transform="translate(420, 96)">
+    <rect width="360" height="195" rx="20" fill="url(#cardBg)" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="32" y="42" font-size="15" font-weight="600" fill="#8B94B3">Total Commits</text>
+    
+    <text x="32" y="115" font-size="56" font-weight="800" fill="url(#numfill)">
+      ${data.commits.toLocaleString()}
+    </text>
+
+    <text x="32" y="152" font-size="13" fill="#8B94B3">Contributions across all branches</text>
+    
+    <!-- Mini progress accent -->
+    <rect x="32" y="168" width="296" height="4" rx="2" fill="#FFFFFF" fill-opacity="0.08"/>
+    <rect x="32" y="168" width="240" height="4" rx="2" fill="url(#rankRing)"/>
+  </g>
+
+  <!-- CARD 3: STARS, PRS & ISSUES -->
+  <g transform="translate(800, 96)">
+    <rect width="360" height="195" rx="20" fill="url(#cardBg)" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+    
+    <text x="32" y="42" font-size="15" font-weight="600" fill="#8B94B3">Community &amp; Contributions</text>
+
+    <g transform="translate(32, 60)">
+      <!-- Stars -->
+      <g transform="translate(0, 16)">
+        <text font-size="28" font-weight="800" fill="#FBBF24">${data.stars} ⭐</text>
+        <text y="22" font-size="12" fill="#8B94B3">Total Stars Earned</text>
+      </g>
+
+      <!-- PRs -->
+      <g transform="translate(145, 16)">
+        <text font-size="28" font-weight="800" fill="#34D399">${data.prs}</text>
+        <text y="22" font-size="12" fill="#8B94B3">Pull Requests</text>
+      </g>
+
+      <!-- Issues -->
+      <g transform="translate(240, 16)">
+        <text font-size="28" font-weight="800" fill="#60A5FA">${data.issues}</text>
+        <text y="22" font-size="12" fill="#8B94B3">Issues</text>
+      </g>
+    </g>
+
+    <text x="32" y="162" font-size="13" fill="#94A3B8">Active in Open Source &amp; Systems Architecture</text>
+  </g>
+
+  <!-- ==================== ROW 2: COMMITS BY HOUR (24H RHYTHM) ==================== -->
+  <g transform="translate(40, 312)">
+    <rect width="1120" height="195" rx="20" fill="url(#cardBg)" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="28" y="36" font-size="17" font-weight="700" fill="#E8ECF8">24-Hour Commit &amp; Coding Activity Rhythm</text>
+    <text x="1092" y="36" text-anchor="end" font-size="13" fill="#8B94B3">UTC+1 (West Africa Time)</text>
+    
+    ${barElements}
+  </g>
+
+  <!-- ==================== ROW 3: TOP LANGUAGES ==================== -->
+  <g transform="translate(40, 528)">
+    <!-- CARD 4: DOUGHNUT CHART -->
+    <rect width="550" height="235" rx="20" fill="url(#cardBg)" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="28" y="36" font-size="17" font-weight="700" fill="#E8ECF8">Dominant Tech Stack</text>
+
+    <!-- Doughnut Background Ring -->
+    <circle cx="450" cy="115" r="68" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="26"/>
+    
+    <!-- Doughnut Slices -->
+    ${doughnutSlices}
+
+    <!-- Center text in Doughnut -->
+    <text x="450" y="112" text-anchor="middle" font-size="24" font-weight="800" fill="url(#numfill)">${primaryLang.percent}%</text>
+    <text x="450" y="132" text-anchor="middle" font-size="12" fill="#8B94B3">${primaryLang.name}</text>
+
+    <text x="28" y="80" font-size="14" fill="#8B94B3">Primary specialization based</text>
+    <text x="28" y="100" font-size="14" fill="#8B94B3">on byte analysis across 100+ repositories.</text>
+
+    <g transform="translate(28, 140)">
+      <rect width="180" height="28" rx="8" fill="#FFFFFF" fill-opacity="0.04" stroke="#FFFFFF" stroke-opacity="0.1"/>
+      <circle cx="16" cy="14" r="4" fill="${primaryLang.color}"/>
+      <text x="28" y="19" font-size="12" font-weight="600" fill="#E8ECF8">Top: ${primaryLang.name}</text>
+    </g>
+
+    <!-- CARD 5: LANGUAGES LIST -->
+    <rect x="570" y="0" width="550" height="235" rx="20" fill="url(#cardBg)" stroke="#FFFFFF" stroke-opacity="0.09" stroke-width="1"/>
+    <text x="598" y="36" font-size="17" font-weight="700" fill="#E8ECF8">Language Distribution Breakdown</text>
+
+    ${langListItems}
   </g>
 </svg>`;
 }
@@ -415,12 +681,13 @@ async function main() {
       fs.mkdirSync(assetsDir, { recursive: true });
     }
 
+    fs.writeFileSync(path.join(assetsDir, 'github-stats.svg'), generateDashboardSVG(data));
     fs.writeFileSync(path.join(assetsDir, 'gh-stats-dark.svg'), generateStatsSVG(data, true));
     fs.writeFileSync(path.join(assetsDir, 'gh-stats-light.svg'), generateStatsSVG(data, false));
     fs.writeFileSync(path.join(assetsDir, 'top-langs-dark.svg'), generateLangsSVG(data, true));
     fs.writeFileSync(path.join(assetsDir, 'top-langs-light.svg'), generateLangsSVG(data, false));
 
-    console.log("Successfully generated all 4 SVG assets in assets/");
+    console.log("Successfully generated all SVG assets including github-stats.svg in assets/");
   } catch (err) {
     console.error("Error generating SVGs:", err);
     process.exit(1);

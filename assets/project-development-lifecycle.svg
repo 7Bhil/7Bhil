@@ -1,0 +1,373 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1600 920" role="img" aria-label="Software Project Development Lifecycle by Bhilal CHITOU">
+  <title>Software Project Development Lifecycle</title>
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bg-grad" cx="50%" cy="40%" r="80%">
+      <stop offset="0%" stop-color="#0a152e"/>
+      <stop offset="50%" stop-color="#050b18"/>
+      <stop offset="100%" stop-color="#02050b"/>
+    </radialGradient>
+    <radialGradient id="glow-cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9d4edd" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#9d4edd" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a86ff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#3a86ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f1f3d" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#081024" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <!-- Card Borders -->
+    <linearGradient id="border-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4facfe" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="border-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b5179e" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#7209b7" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="border-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#059669" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="border-amber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="border-indigo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4338ca" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Pipeline Line Gradient -->
+    <linearGradient id="pipeline-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="25%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#10b981"/>
+      <stop offset="75%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b5179e"/>
+    </linearGradient>
+
+    <!-- Title Shine -->
+    <linearGradient id="title-shine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#70e000"/>
+      <stop offset="100%" stop-color="#00f2fe"/>
+    </linearGradient>
+
+    <!-- Subtle Tech Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00f2fe" stroke-opacity="0.04" stroke-width="1"/>
+    </pattern>
+
+    <!-- Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-sm" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <style>
+    .font-sans { font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; }
+    .font-mono { font-family: 'SFMono-Regular', Consolas, 'Fira Code', 'Courier New', monospace; }
+    
+    /* Animation Flows */
+    .pipe-flow {
+      stroke-dasharray: 14 16;
+      animation: pipeFlow 2.5s linear infinite;
+    }
+    .pipe-pulse {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .node-pulse {
+      animation: nodePulse 2s infinite ease-in-out;
+    }
+    .particle {
+      animation: particleFloat 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pipeFlow {
+      to { stroke-dashoffset: -60; }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.55; }
+      50% { opacity: 1; }
+    }
+    @keyframes nodePulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.18); opacity: 1; filter: drop-shadow(0 0 10px #00f2fe); }
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(0px) translateX(0px); }
+      100% { transform: translateY(-12px) translateX(8px); }
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1600" height="920" rx="30" fill="url(#bg-grad)"/>
+  <rect width="1600" height="920" rx="30" fill="url(#grid)"/>
+
+  <!-- Ambient Glow Blobs -->
+  <circle cx="250" cy="180" r="280" fill="url(#glow-cyan)"/>
+  <circle cx="800" cy="500" r="320" fill="url(#glow-blue)"/>
+  <circle cx="1380" cy="220" r="280" fill="url(#glow-purple)"/>
+
+  <!-- Outer Border -->
+  <rect x="2" y="2" width="1596" height="916" rx="28" fill="none" stroke="#00f2fe" stroke-opacity="0.15" stroke-width="2"/>
+
+  <!-- ==================== HEADER SECTION ==================== -->
+  <g transform="translate(800, 75)" text-anchor="middle">
+    <!-- Badge -->
+    <rect x="-170" y="-35" width="340" height="30" rx="15" fill="#00f2fe" fill-opacity="0.08" stroke="#00f2fe" stroke-opacity="0.35"/>
+    <text y="-15" class="font-mono" font-size="13" font-weight="700" fill="#00f2fe" letter-spacing="3.5">ENGINEERING LIFECYCLE</text>
+    
+    <!-- Main Title -->
+    <text y="32" class="font-sans" font-size="38" font-weight="800" letter-spacing="1.5" fill="#f8fafc" filter="url(#glow-sm)">
+      PROCESSUS DE DÉVELOPPEMENT LOGICIEL
+    </text>
+    
+    <!-- Subtitle / Methodology -->
+    <text y="66" class="font-mono" font-size="13.5" letter-spacing="2.5" fill="#94a3b8">
+      ARCHITECTURE  •  FULL-STACK &amp; FINTECH  •  OFFENSIVE SECURITY  •  CI/CD  •  OBSERVABILITY
+    </text>
+  </g>
+
+  <!-- ==================== PIPELINE CONNECTION BUS ==================== -->
+  <!-- Top pipeline bar connecting phases 1 -> 2 -> 3 -->
+  <path d="M 290 330 L 780 330" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 290 330 L 780 330" fill="none" stroke="url(#pipeline-grad)" stroke-width="4" stroke-linecap="round" class="pipe-flow"/>
+
+  <path d="M 820 330 L 1310 330" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 820 330 L 1310 330" fill="none" stroke="url(#pipeline-grad)" stroke-width="4" stroke-linecap="round" class="pipe-flow"/>
+
+  <!-- Vertical connector to bottom row: 3 down to 5 & 4 -->
+  <path d="M 1310 470 L 1310 570 L 1070 570" fill="none" stroke="#1e293b" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 1310 470 L 1310 570 L 1070 570" fill="none" stroke="url(#pipeline-grad)" stroke-width="4" stroke-linejoin="round" class="pipe-flow"/>
+
+  <path d="M 530 570 L 290 570 L 290 470" fill="none" stroke="#1e293b" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M 530 570 L 290 570 L 290 470" fill="none" stroke="url(#pipeline-grad)" stroke-width="4" stroke-linejoin="round" class="pipe-flow"/>
+
+  <!-- Bottom pipeline connecting 4 <-> 5 -->
+  <path d="M 530 710 L 1070 710" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  <path d="M 530 710 L 1070 710" fill="none" stroke="url(#pipeline-grad)" stroke-width="4" stroke-linecap="round" class="pipe-flow"/>
+
+  <!-- ==================== STAGE CARDS ==================== -->
+
+  <!-- ════ PHASE 01: ARCHITECTURE & CONCEPTION ════ -->
+  <g transform="translate(80, 200)">
+    <!-- Glow -->
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="url(#card-grad)"/>
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="none" stroke="url(#border-cyan)" stroke-width="1.8"/>
+
+    <!-- Phase Badge -->
+    <rect x="25" y="22" width="76" height="26" rx="6" fill="#00f2fe" fill-opacity="0.15" stroke="#00f2fe" stroke-opacity="0.5"/>
+    <text x="63" y="39" class="font-mono" font-size="12" font-weight="700" fill="#00f2fe" text-anchor="middle">PHASE 01</text>
+    
+    <text x="115" y="39" class="font-mono" font-size="11" fill="#64748b" letter-spacing="1.5">PLAN &amp; SPECS</text>
+
+    <!-- Title -->
+    <text x="25" y="80" class="font-sans" font-size="21" font-weight="700" fill="#f1f5f9">
+      Architecture &amp; Conception
+    </text>
+
+    <!-- Items -->
+    <g transform="translate(25, 110)">
+      <circle cx="6" cy="6" r="3.5" fill="#00f2fe"/>
+      <text x="20" y="11" class="font-sans" font-size="14" fill="#cbd5e1">Spécifications &amp; Modélisation Métier</text>
+
+      <circle cx="6" cy="36" r="3.5" fill="#00f2fe"/>
+      <text x="20" y="41" class="font-sans" font-size="14" fill="#cbd5e1">System Design &amp; Architecture Modulaire</text>
+
+      <circle cx="6" cy="66" r="3.5" fill="#00f2fe"/>
+      <text x="20" y="71" class="font-sans" font-size="14" fill="#cbd5e1">Schémas SQL/NoSQL &amp; Contrats d'API</text>
+
+      <circle cx="6" cy="96" r="3.5" fill="#00f2fe"/>
+      <text x="20" y="101" class="font-sans" font-size="14" fill="#cbd5e1">Threat Modeling &amp; Sécurité dès la conception</text>
+    </g>
+
+    <!-- Bottom Tech Pill Tags -->
+    <g transform="translate(25, 232)">
+      <text class="font-mono" font-size="11" fill="#38bdf8">UML  •  Clean Architecture  •  REST/GraphQL  •  Microservices</text>
+    </g>
+  </g>
+
+  <!-- ════ PHASE 02: CORE DEV & FULL-STACK ════ -->
+  <g transform="translate(580, 200)">
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="url(#card-grad)"/>
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="none" stroke="url(#border-indigo)" stroke-width="1.8"/>
+
+    <!-- Phase Badge -->
+    <rect x="25" y="22" width="76" height="26" rx="6" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.5"/>
+    <text x="63" y="39" class="font-mono" font-size="12" font-weight="700" fill="#a5b4fc" text-anchor="middle">PHASE 02</text>
+    
+    <text x="115" y="39" class="font-mono" font-size="11" fill="#64748b" letter-spacing="1.5">BUILD &amp; CODE</text>
+
+    <!-- Title -->
+    <text x="25" y="80" class="font-sans" font-size="21" font-weight="700" fill="#f1f5f9">
+      Full-Stack &amp; Core Dev
+    </text>
+
+    <!-- Items -->
+    <g transform="translate(25, 110)">
+      <circle cx="6" cy="6" r="3.5" fill="#818cf8"/>
+      <text x="20" y="11" class="font-sans" font-size="14" fill="#cbd5e1">Frontend &amp; Mobile Réactifs (Next.js, RN)</text>
+
+      <circle cx="6" cy="36" r="3.5" fill="#818cf8"/>
+      <text x="20" y="41" class="font-sans" font-size="14" fill="#cbd5e1">Backend Robuste &amp; Passerelles Fintech</text>
+
+      <circle cx="6" cy="66" r="3.5" fill="#818cf8"/>
+      <text x="20" y="71" class="font-sans" font-size="14" fill="#cbd5e1">Bhilal Language (Compilateur FR/EN JS &amp; Go)</text>
+
+      <circle cx="6" cy="96" r="3.5" fill="#818cf8"/>
+      <text x="20" y="101" class="font-sans" font-size="14" fill="#cbd5e1">Optimisation des requêtes &amp; Caching</text>
+    </g>
+
+    <!-- Bottom Tech Pill Tags -->
+    <g transform="translate(25, 232)">
+      <text class="font-mono" font-size="11" fill="#a5b4fc">TypeScript  •  React/Next  •  Node/Nest  •  Go  •  Python</text>
+    </g>
+  </g>
+
+  <!-- ════ PHASE 03: OFFENSIVE SECURITY & QA ════ -->
+  <g transform="translate(1080, 200)">
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="url(#card-grad)"/>
+    <rect x="0" y="0" width="440" height="260" rx="18" fill="none" stroke="url(#border-green)" stroke-width="1.8"/>
+
+    <!-- Phase Badge -->
+    <rect x="25" y="22" width="76" height="26" rx="6" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-opacity="0.5"/>
+    <text x="63" y="39" class="font-mono" font-size="12" font-weight="700" fill="#34d399" text-anchor="middle">PHASE 03</text>
+    
+    <text x="115" y="39" class="font-mono" font-size="11" fill="#64748b" letter-spacing="1.5">SECURE &amp; AUDIT</text>
+
+    <!-- Title -->
+    <text x="25" y="80" class="font-sans" font-size="21" font-weight="700" fill="#f1f5f9">
+      Sécurité Offensive &amp; QA
+    </text>
+
+    <!-- Items -->
+    <g transform="translate(25, 110)">
+      <circle cx="6" cy="6" r="3.5" fill="#10b981"/>
+      <text x="20" y="11" class="font-sans" font-size="14" fill="#cbd5e1">Pentesting &amp; Audits de Vulnérabilités (OWASP)</text>
+
+      <circle cx="6" cy="36" r="3.5" fill="#10b981"/>
+      <text x="20" y="41" class="font-sans" font-size="14" fill="#cbd5e1">Analyse Statique &amp; Dynamique (SAST / DAST)</text>
+
+      <circle cx="6" cy="66" r="3.5" fill="#10b981"/>
+      <text x="20" y="71" class="font-sans" font-size="14" fill="#cbd5e1">Tests Unitaires, Intégration &amp; Stress Tests</text>
+
+      <circle cx="6" cy="96" r="3.5" fill="#10b981"/>
+      <text x="20" y="101" class="font-sans" font-size="14" fill="#cbd5e1">Chiffrement fort, JWT &amp; Protection API</text>
+    </g>
+
+    <!-- Bottom Tech Pill Tags -->
+    <g transform="translate(25, 232)">
+      <text class="font-mono" font-size="11" fill="#6ee7b7">Kali Linux  •  Burp Suite  •  Jest  •  Zero-Trust  •  Cryptographie</text>
+    </g>
+  </g>
+
+  <!-- ════ PHASE 04: CI/CD & DEVOPS ════ -->
+  <g transform="translate(300, 580)">
+    <rect x="0" y="0" width="470" height="260" rx="18" fill="url(#card-grad)"/>
+    <rect x="0" y="0" width="470" height="260" rx="18" fill="none" stroke="url(#border-amber)" stroke-width="1.8"/>
+
+    <!-- Phase Badge -->
+    <rect x="25" y="22" width="76" height="26" rx="6" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-opacity="0.5"/>
+    <text x="63" y="39" class="font-mono" font-size="12" font-weight="700" fill="#fbbf24" text-anchor="middle">PHASE 04</text>
+    
+    <text x="115" y="39" class="font-mono" font-size="11" fill="#64748b" letter-spacing="1.5">AUTOMATE &amp; PACK</text>
+
+    <!-- Title -->
+    <text x="25" y="80" class="font-sans" font-size="21" font-weight="700" fill="#f1f5f9">
+      CI/CD &amp; DevOps
+    </text>
+
+    <!-- Items -->
+    <g transform="translate(25, 110)">
+      <circle cx="6" cy="6" r="3.5" fill="#f59e0b"/>
+      <text x="20" y="11" class="font-sans" font-size="14" fill="#cbd5e1">Conteneurisation Docker multi-étapes</text>
+
+      <circle cx="6" cy="36" r="3.5" fill="#f59e0b"/>
+      <text x="20" y="41" class="font-sans" font-size="14" fill="#cbd5e1">Pipelines GitHub Actions (Lint, Test, Build)</text>
+
+      <circle cx="6" cy="66" r="3.5" fill="#f59e0b"/>
+      <text x="20" y="71" class="font-sans" font-size="14" fill="#cbd5e1">Contrôles de sécurité automatisés &amp; Secrets</text>
+
+      <circle cx="6" cy="96" r="3.5" fill="#f59e0b"/>
+      <text x="20" y="101" class="font-sans" font-size="14" fill="#cbd5e1">Déploiement Continu sans interruption (Zero-Downtime)</text>
+    </g>
+
+    <!-- Bottom Tech Pill Tags -->
+    <g transform="translate(25, 232)">
+      <text class="font-mono" font-size="11" fill="#fcd34d">Docker  •  GitHub Actions  •  Linux Server  •  Nginx  •  SSH</text>
+    </g>
+  </g>
+
+  <!-- ════ PHASE 05: CLOUD, OBSERVABILITY & SCALE ════ -->
+  <g transform="translate(830, 580)">
+    <rect x="0" y="0" width="470" height="260" rx="18" fill="url(#card-grad)"/>
+    <rect x="0" y="0" width="470" height="260" rx="18" fill="none" stroke="url(#border-purple)" stroke-width="1.8"/>
+
+    <!-- Phase Badge -->
+    <rect x="25" y="22" width="76" height="26" rx="6" fill="#b5179e" fill-opacity="0.15" stroke="#b5179e" stroke-opacity="0.5"/>
+    <text x="63" y="39" class="font-mono" font-size="12" font-weight="700" fill="#f472b6" text-anchor="middle">PHASE 05</text>
+    
+    <text x="115" y="39" class="font-mono" font-size="11" fill="#64748b" letter-spacing="1.5">PROD &amp; MONITOR</text>
+
+    <!-- Title -->
+    <text x="25" y="80" class="font-sans" font-size="21" font-weight="700" fill="#f1f5f9">
+      Observabilité &amp; Scalabilité
+    </text>
+
+    <!-- Items -->
+    <g transform="translate(25, 110)">
+      <circle cx="6" cy="6" r="3.5" fill="#b5179e"/>
+      <text x="20" y="11" class="font-sans" font-size="14" fill="#cbd5e1">Télémétrie, Logs temps réel &amp; Monitoring</text>
+
+      <circle cx="6" cy="36" r="3.5" fill="#b5179e"/>
+      <text x="20" y="41" class="font-sans" font-size="14" fill="#cbd5e1">Optimisation des latences &amp; Haute Disponibilité</text>
+
+      <circle cx="6" cy="66" r="3.5" fill="#b5179e"/>
+      <text x="20" y="71" class="font-sans" font-size="14" fill="#cbd5e1">Stratégies de Backup &amp; Reprise d'activité</text>
+
+      <circle cx="6" cy="96" r="3.5" fill="#b5179e"/>
+      <text x="20" y="101" class="font-sans" font-size="14" fill="#cbd5e1">Maintenance évolutive &amp; Intégration continue</text>
+    </g>
+
+    <!-- Bottom Tech Pill Tags -->
+    <g transform="translate(25, 232)">
+      <text class="font-mono" font-size="11" fill="#f472b6">Cloud  •  Telemetry  •  Rate Limiting  •  Redis  •  Auto-healing</text>
+    </g>
+  </g>
+
+  <!-- Glowing Flow Nodes on the Pipeline -->
+  <circle cx="300" cy="330" r="7" fill="#00f2fe" filter="url(#glow-sm)" class="node-pulse"/>
+  <circle cx="800" cy="330" r="7" fill="#6366f1" filter="url(#glow-sm)" class="node-pulse"/>
+  <circle cx="1300" cy="330" r="7" fill="#10b981" filter="url(#glow-sm)" class="node-pulse"/>
+  <circle cx="535" cy="710" r="7" fill="#f59e0b" filter="url(#glow-sm)" class="node-pulse"/>
+  <circle cx="1065" cy="710" r="7" fill="#b5179e" filter="url(#glow-sm)" class="node-pulse"/>
+
+  <!-- Small Floating Accent Particles -->
+  <circle cx="200" cy="140" r="3" fill="#00f2fe" opacity="0.6" class="particle"/>
+  <circle cx="1450" cy="150" r="3.5" fill="#b5179e" opacity="0.6" class="particle"/>
+  <circle cx="780" cy="880" r="2.5" fill="#38bdf8" opacity="0.5" class="particle"/>
+  <circle cx="150" cy="850" r="3" fill="#10b981" opacity="0.4" class="particle"/>
+</svg>

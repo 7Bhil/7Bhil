@@ -6,6 +6,11 @@
   <img src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/monlogo.png" alt="Bhilal CHITOU Logo" width="180" />
 </p>
 
+<!-- PROJECT DEVELOPMENT LIFECYCLE -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/project-development-lifecycle.svg" alt="Software Project Development Lifecycle" width="100%" />
+</p>
+
 ---
 
 <h2 align="center">About Me</h2>
@@ -80,20 +85,11 @@
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=7Bhil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
+  <img src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/github-stats.svg" alt="Bhilal CHITOU's GitHub Stats Dashboard" width="100%" />
 </p>
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-light.svg">
-    <img alt="Bhilal CHITOU's GitHub Stats" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/gh-stats-dark.svg" height="190" />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-light.svg">
-    <img alt="Most Used Languages" src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/top-langs-dark.svg" height="190" />
-  </picture>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=7Bhil&theme=tokyonight&hide_border=true" alt="GitHub Streak" />
 </p>
 
 ---
