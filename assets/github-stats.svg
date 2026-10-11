@@ -8,7 +8,7 @@
   aria-label="GitHub stats dashboard for Bhilal. Chitou"
 >
   <title>GitHub stats dashboard for Bhilal. Chitou</title>
-  <desc>Rank A+, Total Commits: 1849, Stars: 11, PRs: 113, Issues: 13</desc>
+  <desc>Rank A+, Total Commits: 1399, Stars: 11, PRs: 29, Issues: 3</desc>
 
   <style>
     text {
@@ -145,7 +145,7 @@
     <text x="32" y="42" font-size="15" font-weight="600" fill="#8B94B3">Total Commits</text>
     
     <text x="32" y="115" font-size="56" font-weight="800" fill="url(#numfill)">
-      1 849
+      1,399
     </text>
 
     <text x="32" y="152" font-size="13" fill="#8B94B3">Contributions across all branches</text>
@@ -170,13 +170,13 @@
 
       <!-- PRs -->
       <g transform="translate(145, 16)">
-        <text font-size="28" font-weight="800" fill="#34D399">113</text>
+        <text font-size="28" font-weight="800" fill="#34D399">29</text>
         <text y="22" font-size="12" fill="#8B94B3">Pull Requests</text>
       </g>
 
       <!-- Issues -->
       <g transform="translate(240, 16)">
-        <text font-size="28" font-weight="800" fill="#60A5FA">13</text>
+        <text font-size="28" font-weight="800" fill="#60A5FA">3</text>
         <text y="22" font-size="12" fill="#8B94B3">Issues</text>
       </g>
     </g>
@@ -298,14 +298,14 @@
     <circle cx="450" cy="115" r="68" fill="none" stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="26"/>
     
     <!-- Doughnut Slices -->
-    <circle cx="450" cy="115" r="68" fill="none" stroke="#f1e05a" stroke-width="26" stroke-dasharray="163.56 427.26" stroke-dashoffset="0.00" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
-<circle cx="450" cy="115" r="68" fill="none" stroke="#e34c26" stroke-width="26" stroke-dasharray="69.09 427.26" stroke-dashoffset="-163.56" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
-<circle cx="450" cy="115" r="68" fill="none" stroke="#3178c6" stroke-width="26" stroke-dasharray="47.13 427.26" stroke-dashoffset="-232.64" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
-<circle cx="450" cy="115" r="68" fill="none" stroke="#41b883" stroke-width="26" stroke-dasharray="45.50 427.26" stroke-dashoffset="-279.77" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
-<circle cx="450" cy="115" r="68" fill="none" stroke="#3572A5" stroke-width="26" stroke-dasharray="35.38 427.26" stroke-dashoffset="-325.27" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
+    <circle cx="450" cy="115" r="68" fill="none" stroke="#f1e05a" stroke-width="26" stroke-dasharray="163.73 427.26" stroke-dashoffset="0.00" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
+<circle cx="450" cy="115" r="68" fill="none" stroke="#e34c26" stroke-width="26" stroke-dasharray="69.05 427.26" stroke-dashoffset="-163.73" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
+<circle cx="450" cy="115" r="68" fill="none" stroke="#3178c6" stroke-width="26" stroke-dasharray="47.08 427.26" stroke-dashoffset="-232.77" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
+<circle cx="450" cy="115" r="68" fill="none" stroke="#41b883" stroke-width="26" stroke-dasharray="45.46 427.26" stroke-dashoffset="-279.86" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
+<circle cx="450" cy="115" r="68" fill="none" stroke="#3572A5" stroke-width="26" stroke-dasharray="35.38 427.26" stroke-dashoffset="-325.32" transform="rotate(-90 450 115)" style="opacity: 0.95; transition: all 0.5s ease;"/>
 
     <!-- Center text in Doughnut -->
-    <text x="450" y="112" text-anchor="middle" font-size="24" font-weight="800" fill="url(#numfill)">38.28%</text>
+    <text x="450" y="112" text-anchor="middle" font-size="24" font-weight="800" fill="url(#numfill)">38.32%</text>
     <text x="450" y="132" text-anchor="middle" font-size="12" fill="#8B94B3">JavaScript</text>
 
     <text x="28" y="80" font-size="14" fill="#8B94B3">Primary specialization based</text>
@@ -324,22 +324,22 @@
     
       <circle cx="620" cy="80" r="5" fill="#f1e05a"/>
       <text x="638" y="85" font-size="14" fill="#E8ECF8">JavaScript</text>
-      <text x="1080" y="85" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">38.28%</text>
+      <text x="1080" y="85" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">38.32%</text>
     
 
       <circle cx="620" cy="108" r="5" fill="#e34c26"/>
       <text x="638" y="113" font-size="14" fill="#E8ECF8">HTML</text>
-      <text x="1080" y="113" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">16.17%</text>
+      <text x="1080" y="113" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">16.16%</text>
     
 
       <circle cx="620" cy="136" r="5" fill="#3178c6"/>
       <text x="638" y="141" font-size="14" fill="#E8ECF8">TypeScript</text>
-      <text x="1080" y="141" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">11.03%</text>
+      <text x="1080" y="141" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">11.02%</text>
     
 
       <circle cx="620" cy="164" r="5" fill="#41b883"/>
       <text x="638" y="169" font-size="14" fill="#E8ECF8">Vue</text>
-      <text x="1080" y="169" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">10.65%</text>
+      <text x="1080" y="169" text-anchor="end" font-size="14" font-weight="600" fill="#8B94B3">10.64%</text>
     
 
       <circle cx="620" cy="192" r="5" fill="#3572A5"/>
