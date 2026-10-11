@@ -1,3 +1,8 @@
+<!-- HEADER BANNER -->
+<p align="center">
+  <img src="https://raw.githubusercontent.com/7Bhil/7Bhil/main/assets/header.svg" alt="Bhilal CHITOU - Header Banner" width="100%" />
+</p>
+
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=4000&pause=1000&color=00BFFF&center=true&vCenter=true&width=700&height=50&lines=Hey+there!+I'm+Bhilal+CHITOU;Full-Stack+%26+Mobile+Developer;Fintech+%26+Offensive+Security+Specialist;Builder+of+the+Bhilal+Language;Based+in+Porto-Novo%2C+Benin" alt="Typing SVG" />
 </p>
