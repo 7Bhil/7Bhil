@@ -61,13 +61,13 @@
         <rect mask="url(#rect-mask)" data-testid="lang-progress" x="0.00" y="0" width="95.80" height="8" fill="#f1e05a" />
         <rect mask="url(#rect-mask)" data-testid="lang-progress" x="95.80" y="0" width="40.40" height="8" fill="#e34c26" />
         <rect mask="url(#rect-mask)" data-testid="lang-progress" x="136.20" y="0" width="27.55" height="8" fill="#3178c6" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="163.75" y="0" width="26.60" height="8" fill="#41b883" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="190.35" y="0" width="20.70" height="8" fill="#3572A5" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="211.05" y="0" width="10.48" height="8" fill="#563d7c" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="221.52" y="0" width="8.30" height="8" fill="#4F5D95" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="229.82" y="0" width="7.52" height="8" fill="#00B4AB" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="237.35" y="0" width="4.42" height="8" fill="#f7523f" />
-        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="241.78" y="0" width="2.40" height="8" fill="#f34b7d" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="163.75" y="0" width="26.63" height="8" fill="#41b883" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="190.38" y="0" width="20.70" height="8" fill="#3572A5" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="211.07" y="0" width="10.48" height="8" fill="#563d7c" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="221.55" y="0" width="8.30" height="8" fill="#4F5D95" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="229.85" y="0" width="7.52" height="8" fill="#00B4AB" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="237.38" y="0" width="4.42" height="8" fill="#f7523f" />
+        <rect mask="url(#rect-mask)" data-testid="lang-progress" x="241.80" y="0" width="2.40" height="8" fill="#f34b7d" />
       
       <g transform="translate(0, 25)">
         <g transform="translate(0, 0)">
@@ -96,7 +96,7 @@
     <g class="stagger" style="animation-delay: 900ms">
       <circle cx="5" cy="6" r="5" fill="#41b883" />
       <text data-testid="lang-name" x="15" y="10" class="lang-name">
-        Vue 10.64%
+        Vue 10.65%
       </text>
     </g>
   </g><g transform="translate(0, 100)">
